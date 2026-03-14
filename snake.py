@@ -1,6 +1,6 @@
 import time
 from enum import Enum
-
+import sys
 
 class Direction(Enum):
     UP = 1
@@ -29,6 +29,19 @@ class Snake:
 
 
 class AbsctractRender:
+    def __init__(self, element):
+        self.element = element
+    
+
+
+    def move_cursor(self, row, col):
+        sys.stdout.write(f"\033[{row};{col}H")
+
+
     def render():
         pass
-        
+
+class RenderCanvas:
+    def render():
+        self.move_cursor(5,5)
+        print("x")
