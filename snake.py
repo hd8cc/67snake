@@ -1,6 +1,7 @@
 import time
 from enum import Enum
 import sys
+import os
 
 class Direction(Enum):
     UP = 1
@@ -38,10 +39,51 @@ class AbsctractRender:
         sys.stdout.write(f"\033[{row};{col}H")
 
 
-    def render():
+    def render(self):
         pass
 
-class RenderCanvas:
-    def render():
-        self.move_cursor(5,5)
-        print("x")
+class RenderCanvas(AbsctractRender):
+    def render(self):
+        os.system("cls")
+
+
+
+
+
+ 
+        self.move_cursor(1, 0)
+        print("#"*(self.element.width + 2))
+
+
+
+        self.move_cursor(self.element.height + 2, 0)
+        print("#"*(self.element.width + 2))
+
+
+
+        for i in range(self.element.height + 2):
+            self.move_cursor(i, 0)
+            print("#")
+            self.move_cursor(i, self.element.width + 2)
+            print("#")
+
+        
+
+
+
+        self.move_cursor(self.element.height + 5, 0)
+
+        
+
+
+            
+
+
+if __name__ == "__main__":
+    
+
+    canvas1 = Canvas(2,4)
+    renderer = RenderCanvas(canvas1)
+
+    renderer.render()
+
