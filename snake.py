@@ -28,3 +28,7 @@ class Snake:
 
 
 
+class AbsctractRender:
+    def render():
+        pass
+        
